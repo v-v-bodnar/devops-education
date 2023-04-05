@@ -1,5 +1,6 @@
 resource "aws_security_group" "project3" {
-  name = "project3"
+  name   = "project3"
+  vpc_id = aws_vpc.project3.id
 
   dynamic "ingress" {
     for_each = var.ingress_ports
